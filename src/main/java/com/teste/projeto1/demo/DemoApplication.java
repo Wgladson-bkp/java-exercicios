@@ -1,5 +1,6 @@
 package com.teste.projeto1.demo;
 
+import Model.EpisodioDTO;
 import Model.SerieDTO;
 import service.ConsumoApi;
 import org.springframework.boot.CommandLineRunner;
@@ -25,5 +26,12 @@ public class DemoApplication implements CommandLineRunner {
         var converter = new ConverteDados();
         var dados = converter.converteDados(json, SerieDTO.class);
         System.out.println(dados);
+
+        System.out.println("=================DADOS ESPISODIO=========================");
+
+        var jsonEpisode = busca.obterDados("http://www.omdbapi.com/?t=breaking+bad&season=1&episode=1&apikey=d041973d");
+        var dadosEpisodio = converter.converteDados(jsonEpisode, EpisodioDTO.class);
+        System.out.println(dadosEpisodio);
+
     }
 }
