@@ -1,4 +1,7 @@
 package Model;
+
+import java.util.stream.DoubleStream;
+
 public class Produto {
 
     private int id;
@@ -20,6 +23,7 @@ public class Produto {
         this.preco = preco;
         this.estoque = estoque;
     }
+
 
     public int getId() {
         return id;
